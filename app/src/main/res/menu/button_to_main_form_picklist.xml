@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Button to Main Form Activity"
+        android:id="@+id/btn_to_main_form_activity"
+        android:icon="@drawable/ic_baseline_chevron_right_24"
+        app:showAsAction="always">
+
+    </item>
+
+    <item android:title="Button to Finish Transaction"
+        android:id="@+id/btn_to_finish"
+        android:icon="@drawable/ic_baseline_save_24"
+        app:showAsAction="always">
+
+    </item>
+
+</menu>

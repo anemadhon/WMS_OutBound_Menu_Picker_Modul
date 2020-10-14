@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PickListMainFormBatchActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickNumberForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Number"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pickNumberForBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="pickNumberForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickDateForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Date"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/pickDateForBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:text="pickDateForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/cardCodeForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Request By"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardCodeForBatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="cardCodeForBatch - cardNameForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/cardNameForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Card Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardNameForBatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="cardNameForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickMemoForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Remark"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/pickMemoForBatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="pickMemoForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/itemCodeForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Item Code"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/itemCodeForBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="itemCodeForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/itemNameForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Item Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/itemNameForBatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="itemNameForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="3dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp">
+
+                    <TextView
+                        android:id="@+id/totalToPickForBatchLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:text="Total to Pick"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/totalToPickForBatch"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="16dp"
+                        android:text="totalToPickForBinLoc"
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp">
+
+                    <TextView
+                        android:id="@+id/remainQtyForBatchLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:text="Remaining Qty"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/remainQtyForBatch"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="16dp"
+                        android:text="remainQtyForBinLoc"
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/uomForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Inventory UoM"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/uomForBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="uomForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/binLocForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Bin Location"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/binLocForBatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="binLocForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/qtyBinLocForBatchLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Avl Qty Bin Location"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/qtyBinLocForBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="qtyBinLocForBatch"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/batchPickerLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Batch Number"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/batchPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <Button
+                    android:id="@+id/imgBtnSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="View All Batch Number List"
+                    android:drawableRight="@drawable/ic_baseline_search_24"
+                    android:gravity="center"
+                    android:paddingRight="55dp"
+                    android:paddingLeft="45dp"
+                    android:singleLine="true"
+                    android:onClick="btnClickSearchBatch"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="3dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp">
+
+                    <TextView
+                        android:id="@+id/qtyBatchPickerLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:text="Qty Avl Batch"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/qtyBatchPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="16dp"
+                        android:text=""
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp">
+
+                    <TextView
+                        android:id="@+id/expDateBatchPickerLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:text="Exp Date Batch"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/expDateBatchPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="16dp"
+                        android:text=""
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/qtyPickerLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Quantity"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/qtyPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/unLoadBinLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Unloading Bin Location"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/unLoadBin"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="23dp">
+
+                <Button
+                    android:id="@+id/imgBtnSearch2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="View All Unloading Bin Loc List"
+                    android:drawableRight="@drawable/ic_baseline_search_24"
+                    android:gravity="center"
+                    android:paddingRight="35dp"
+                    android:paddingLeft="25dp"
+                    android:singleLine="true"
+                    android:onClick="btnClickSearchUnLoadBin"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

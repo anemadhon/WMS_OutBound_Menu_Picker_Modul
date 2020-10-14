@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Button to Main Form After choosing Pick Number"
+        android:id="@+id/btn_after_choose_picknumber"
+        android:icon="@drawable/ic_baseline_chevron_right_24"
+        app:showAsAction="always">
+
+    </item>
+
+</menu>

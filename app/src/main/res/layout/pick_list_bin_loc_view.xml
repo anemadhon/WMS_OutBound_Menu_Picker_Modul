@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/binLocLabel"
+                android:layout_width="80dp"
+                android:layout_height="19dp"
+                android:layout_weight="1"
+                android:text="Bin Location" />
+
+            <TextView
+                android:id="@+id/binLocLabel2"
+                android:layout_width="3dp"
+                android:layout_height="19dp"
+                android:layout_weight="1"
+                android:text=":"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:id="@+id/binLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="binLoc"
+                android:layout_marginStart="13dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/qtyBinLocLabel"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Avl Quantity" />
+
+            <TextView
+                android:id="@+id/qtyBinLocLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=":"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:id="@+id/qtyBinLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="qtyBinLoc"
+                android:layout_marginStart="13dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

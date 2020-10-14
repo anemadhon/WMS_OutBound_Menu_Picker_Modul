@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pickNumberLabel"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pick Number" />
+
+            <TextView
+                android:id="@+id/pickNumberLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=":"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:id="@+id/pickNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="pickNumber"
+                android:layout_marginStart="13dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pickDateLabel"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pick Date"/>
+
+            <TextView
+                android:id="@+id/pickDateLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=":"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:id="@+id/pickDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="pickDate"
+                android:layout_marginStart="13dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pickerCardCodeLabel"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Card Code"/>
+
+            <TextView
+                android:id="@+id/pickerCardCodeLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=":"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:id="@+id/pickerCardCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="pickerCardCode"
+                android:layout_marginStart="13dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pickerNameLabel"
+                android:layout_width="90dp"
+                android:layout_height="19dp"
+                android:layout_weight="1"
+                android:text="Card Name"/>
+
+            <TextView
+                android:id="@+id/pickerNameLabel2"
+                android:layout_width="3dp"
+                android:layout_height="19dp"
+                android:layout_weight="1"
+                android:text=":"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:id="@+id/pickerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="pickerName"
+                android:layout_marginStart="13dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pickMemoLabel"
+                android:layout_width="90dp"
+                android:layout_height="19dp"
+                android:layout_weight="1"
+                android:text="Pick Remark"/>
+
+            <TextView
+                android:id="@+id/pickMemoLabel2"
+                android:layout_width="3dp"
+                android:layout_height="19dp"
+                android:layout_weight="1"
+                android:text=":"
+                android:layout_marginStart="13dp"/>
+
+            <TextView
+                android:id="@+id/pickMemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="pickMemo"
+                android:layout_marginStart="13dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

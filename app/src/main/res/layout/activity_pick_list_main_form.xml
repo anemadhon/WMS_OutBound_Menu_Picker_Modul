@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PickListMainFormActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickNumberLabel"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Number" />
+
+                <TextView
+                    android:id="@+id/pickNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:text="pickNumber"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickDateLabel"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Date"/>
+
+                <TextView
+                    android:id="@+id/pickDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:text="pickDate"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickCardCodeLabel"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Request By"/>
+
+                <TextView
+                    android:id="@+id/pickCardCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="pickCardCode - pickCardName"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickCardNameLabel"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Card Name"/>
+
+                <TextView
+                    android:id="@+id/pickCardName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:text="pickCardName"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickMemoLabel"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Remark"/>
+
+                <TextView
+                    android:id="@+id/pickMemo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="pickMemo"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/itemBarcodePickerLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Item Barcode"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/itemBarcodePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:inputType="text"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/imgBtnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="View All Item List"
+                android:drawableRight="@drawable/ic_baseline_search_24"
+                android:gravity="center"
+                android:paddingRight="65dp"
+                android:paddingLeft="55dp"
+                android:singleLine="true"
+                android:onClick="btnClickSearchItem"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

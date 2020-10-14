@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PickListMainFormBinActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickNumberForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Number"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pickNumberForBinLoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="pickNumberForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickDateForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Date"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/pickDateForBinLoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="pickDateForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/cardCodeForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Request By"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardCodeForBinLoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="cardCodeForBinLoc - cardNameForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/cardNameForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Card Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardNameForBinLoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="cardNameForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/pickMemoForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Pick Remark"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/pickMemoForBinLoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="pickMemoForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/itemCodeForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Item Code"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/itemCodeForBinLoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="itemCodeForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/itemNameForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Item Name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/itemNameForBinLoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="itemNameForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="3dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp">
+
+                    <TextView
+                        android:id="@+id/totalToPickForBinLocLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:text="Total to Pick"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/totalToPickForBinLoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="16dp"
+                        android:text="totalToPickForBinLoc"
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp">
+
+                    <TextView
+                        android:id="@+id/remainQtyForBinLocLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="17dp"
+                        android:text="Remaining Qty"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/remainQtyForBinLoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="16dp"
+                        android:text="remainQtyForBinLoc"
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/uomForBinLocLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Inventory UoM"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/uomForBinLoc"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textSize="16dp"
+                    android:text="uomForBinLoc"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="3dp">
+
+                <TextView
+                    android:id="@+id/binLocPickerLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="5dp"
+                    android:text="Bin Location"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/binLocPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/imgBtnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:text="View All Bin Loc List"
+                android:drawableRight="@drawable/ic_baseline_search_24"
+                android:gravity="center"
+                android:paddingRight="65dp"
+                android:paddingLeft="55dp"
+                android:singleLine="true"
+                android:onClick="btnClickSearchBinLoc"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
