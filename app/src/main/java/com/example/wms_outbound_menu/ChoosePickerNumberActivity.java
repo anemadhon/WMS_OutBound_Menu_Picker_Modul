@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -21,6 +22,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+
 public class ChoosePickerNumberActivity extends AppCompatActivity {
 
     String whsCode;
@@ -29,6 +41,8 @@ public class ChoosePickerNumberActivity extends AppCompatActivity {
     EditText editTextChoosePickNumber;
 
     DBHelper DB;
+
+    ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,35 +138,33 @@ public class ChoosePickerNumberActivity extends AppCompatActivity {
 
     protected void checkDataInSQLite() {
         DB = new DBHelper(this);
-        Cursor data = DB.getPickerData();
+        final Cursor data = DB.getPickerData();
+        String stringJson = "";
 
         if (data.getCount() > 0) {
-            StringBuffer buffer = new StringBuffer();
+            if (data.getCount() == 1) {
+                while (data.moveToNext()) {
+                    stringJson = data.getString(0);
+                }
+            }
+            final StringBuffer buffer = new StringBuffer();
             while (data.moveToNext()) {
                 buffer.append(data.getString(0)+",");
             }
             Log.d("tag", "JSON String dari SQLite: "+buffer);
 
             final AlertDialog.Builder info = new AlertDialog.Builder(ChoosePickerNumberActivity.this);
-            info.setMessage("Data Offline ditemukan").setTitle("Info");
+            info.setMessage(data.getCount()+" Data Offline ditemukan").setTitle("Info");
             info.setCancelable(false);
 
+            final String finalStringJson = stringJson;
             info.setPositiveButton(
                     "Sinkronisasi Sekarang",
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            //posting to online server
-                            DB = new DBHelper(ChoosePickerNumberActivity.this);
-                            Boolean deletePicker = DB.deletePickerData();
-
-                            if (deletePicker) {
-                                Toast.makeText(ChoosePickerNumberActivity.this, "Sinkronisasi Sukses", Toast.LENGTH_SHORT).show();
-                                dialogInterface.dismiss();
-                                Log.d("tag", "Status Delete: " + deletePicker);
-                            } else {
-                                Log.d("tag", "Status Delete: " + deletePicker);
-                            }
+                            postingToServer(data.getCount() >= 2 ? buffer.toString() : finalStringJson);
+                            dialogInterface.dismiss();
                         }
                     }
             );
@@ -164,5 +176,106 @@ public class ChoosePickerNumberActivity extends AppCompatActivity {
             layoutParams.gravity = Gravity.CENTER;
             alert.getButton(AlertDialog.BUTTON_POSITIVE).setLayoutParams(layoutParams);
         }
+    }
+
+    protected void postingToServer(final String json){
+
+        pDialog = new ProgressDialog(ChoosePickerNumberActivity.this);
+        pDialog.setMessage("Please wait...");
+        pDialog.setCancelable(false);
+        pDialog.show();
+
+        String urlPost = "http://103.87.86.29:12950/tgrpo/tgrpo/api/listgrpodlvs"; //103.87.86.29:12950 //116.197.129.170:12950
+
+        StringRequest strReq = new StringRequest(Request.Method.POST, urlPost, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject statusMsg = new JSONObject(response);
+                    if (statusMsg.getString("status").toString().equals("1")) {
+                        DB = new DBHelper(ChoosePickerNumberActivity.this);
+                        Boolean deletePicker = DB.deletePickerData();
+
+                        if (deletePicker) {
+                            Toast.makeText(ChoosePickerNumberActivity.this, "Sinkronisasi Sukses", Toast.LENGTH_SHORT).show();
+                            Log.d("tag", "Status Delete: " + deletePicker);
+                        } else {
+                            Log.d("tag", "Status Delete: " + deletePicker);
+                        }
+
+                        /*AlertDialog.Builder successInfo = new AlertDialog.Builder(ChoosePickerNumberActivity.this);
+                        successInfo.setMessage("Berhasil Posting Data").setTitle("Info");
+                        successInfo.setCancelable(false);
+
+                        successInfo.setPositiveButton(
+                                "OK",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent toMain = new Intent(ChoosePickerNumberActivity.this, ChoosePickerNumberActivity.class);
+                                        startActivity(toMain);
+                                    }
+                                }
+                        );
+
+                        AlertDialog successInfoDialog = successInfo.create();
+                        successInfoDialog.show();*/
+                    } else {
+                        AlertDialog.Builder errorInfo = new AlertDialog.Builder(ChoosePickerNumberActivity.this);
+                        errorInfo.setMessage("Error, Sinkronisasi Data Gagal").setTitle("Info");
+                        errorInfo.setCancelable(true);
+                        AlertDialog errorInfoDialog = errorInfo.create();
+                        errorInfoDialog.show();
+                    }
+                    Log.d("tag", "response post: "+statusMsg);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                if (pDialog.isShowing()) {
+                    new android.os.Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            pDialog.dismiss();
+                        }}, 300);
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                AlertDialog.Builder errorInfo = new AlertDialog.Builder(ChoosePickerNumberActivity.this);
+                errorInfo.setMessage("Error, Sinkronisasi Data Gagal (Status Code:"+error.networkResponse.statusCode+")").setTitle("Error");
+                errorInfo.setCancelable(false);
+
+                errorInfo.setPositiveButton(
+                        "OK",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent toMain = new Intent(ChoosePickerNumberActivity.this, MainActivity.class);
+                                startActivity(toMain);
+                            }
+                        }
+                );
+
+                AlertDialog errorInfoDialog = errorInfo.create();
+                errorInfoDialog.show();
+            }
+        })
+        {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8;";
+            }
+
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return json == null ? null : json.getBytes("utf-8");
+                } catch (UnsupportedEncodingException uee) {
+                    return null;
+                }
+            }
+        };
+        PickerPickSingleton.getInstance(this).addToRequestQueue(strReq);
     }
 }

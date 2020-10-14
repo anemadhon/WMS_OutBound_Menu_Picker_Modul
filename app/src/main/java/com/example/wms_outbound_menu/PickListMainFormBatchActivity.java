@@ -36,8 +36,10 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -259,13 +261,16 @@ public class PickListMainFormBatchActivity extends AppCompatActivity {
                     qtyAvlBatch.setText("Loading...");
                     expDateBatch.setText("Loading...");
 
+                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                    final String formatted = df.format(new Date());
+
                     JsonArrayRequest stringRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
                         @Override
                         public void onResponse(JSONArray response) {
                             try {
                                 if (response.length() == 0) {
                                     qtyAvlBatch.setText("0");
-                                    expDateBatch.setText("YYYY-MM-DD HH:ii:ss");
+                                    expDateBatch.setText(formatted);
                                 } else {
                                     for (int i = 0; i < response.length(); i++) {
                                         JSONObject dataPicker = response.getJSONObject(i);
@@ -644,7 +649,7 @@ public class PickListMainFormBatchActivity extends AppCompatActivity {
                             SetPostModel headerItemModel = new SetPostModel(pkNmbr, pkDt, crdCd, whCd, pkRmk, unLdBn, listDetailItemModel);
                             String json = gson.toJson(headerItemModel);
                             //checkConnection(json);
-                            //postingToServer(json);
+                            postingToServer(json);
                             postingToSQLite(json);
                             Log.d("tag", "headerItemModel: "+json);
                         }
@@ -677,14 +682,6 @@ public class PickListMainFormBatchActivity extends AppCompatActivity {
         Boolean insertPicker = DB.insertPickerData(jsonString);
         if (insertPicker)
             Toast.makeText(PickListMainFormBatchActivity.this, "GOOD!! inserted into SQLite", Toast.LENGTH_SHORT).show();
-            Cursor data = DB.getPickerData();
-            if (data.getCount() > 0) {
-                StringBuffer buffer = new StringBuffer();
-                while (data.moveToNext()) {
-                    buffer.append(data.getString(0)+",");
-                }
-                Log.d("tag", "JSON String dari SQLite: "+buffer);
-            }
         else
             Toast.makeText(PickListMainFormBatchActivity.this, "BAD!! no data inserted into SQLite", Toast.LENGTH_SHORT).show();
     }
