@@ -202,24 +202,6 @@ public class ChoosePickerNumberActivity extends AppCompatActivity {
                         } else {
                             Log.d("tag", "Status Delete: " + deletePicker);
                         }
-
-                        /*AlertDialog.Builder successInfo = new AlertDialog.Builder(ChoosePickerNumberActivity.this);
-                        successInfo.setMessage("Berhasil Posting Data").setTitle("Info");
-                        successInfo.setCancelable(false);
-
-                        successInfo.setPositiveButton(
-                                "OK",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        Intent toMain = new Intent(ChoosePickerNumberActivity.this, ChoosePickerNumberActivity.class);
-                                        startActivity(toMain);
-                                    }
-                                }
-                        );
-
-                        AlertDialog successInfoDialog = successInfo.create();
-                        successInfoDialog.show();*/
                     } else {
                         AlertDialog.Builder errorInfo = new AlertDialog.Builder(ChoosePickerNumberActivity.this);
                         errorInfo.setMessage("Error, Sinkronisasi Data Gagal").setTitle("Info");

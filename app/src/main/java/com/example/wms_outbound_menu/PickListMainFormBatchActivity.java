@@ -648,9 +648,9 @@ public class PickListMainFormBatchActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int id) {
                             SetPostModel headerItemModel = new SetPostModel(pkNmbr, pkDt, crdCd, whCd, pkRmk, unLdBn, listDetailItemModel);
                             String json = gson.toJson(headerItemModel);
-                            //checkConnection(json);
-                            postingToServer(json);
-                            postingToSQLite(json);
+                            checkConnection(json);
+                            /*postingToServer(json);
+                            postingToSQLite(json);*/
                             Log.d("tag", "headerItemModel: "+json);
                         }
                     });
@@ -669,11 +669,12 @@ public class PickListMainFormBatchActivity extends AppCompatActivity {
     }
 
     protected void checkConnection(final String json) {
-        //check connection
-        //if "online"
-        // // postingToServer(json);
-        //else
-        // // postingToSQLite(json);
+        String status = NetworkHelper.getConnectionStatus(PickListMainFormBatchActivity.this);
+        Log.d("tag network", "network status: "+status);
+        if (status == "online")
+            postingToServer(json);
+        else
+            postingToSQLite(json);
     }
 
     protected void postingToSQLite(final String json) {
